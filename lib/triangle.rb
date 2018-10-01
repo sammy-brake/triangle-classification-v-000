@@ -14,7 +14,7 @@ def kind
     return :scalene 
   elsif @length_two == @length_one && @length_two == @length_three 
   return :equilateral 
-elsif @length_three == 0 || @length_two == 0 || @length_one == 0 
+elsif @length_three < 1 || @length_two < 1 || @length_one < 1 
 raise TriangleError
 else 
   return :isosceles 
