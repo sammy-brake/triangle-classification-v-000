@@ -25,7 +25,7 @@ end
 class TriangleError < StandardError 
  "peanuts"
   end 
-end 
+
 
 
 end 
