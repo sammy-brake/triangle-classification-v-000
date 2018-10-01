@@ -16,7 +16,7 @@ def kind
      return :equilateral 
   else 
      return :isosceles 
-end 
+  end 
 end 
 
 class TriangleError < StandardError 
