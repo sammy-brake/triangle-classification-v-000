@@ -19,7 +19,9 @@ def kind
   end 
 end 
 
-
+def triangle_inequality? 
+  @length_three + @length_two > @length_one && @length_one + @length_two > @length_three && @length_three + @length_one > @length_two 
+end 
 
 class TriangleError < StandardError 
 
