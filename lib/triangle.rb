@@ -10,14 +10,13 @@ class Triangle
 end
 
 def kind 
-  if @length_three != @length_two && @length_three != @length_one && @length_one != @length_two 
-    return :scalene 
+  if @length_three != @length_two && @length_three != @length_one &&   @length_one != @length_two 
+     return :scalene 
   elsif @length_two == @length_one && @length_two == @length_three 
-  return :equilateral 
-else 
-  return :isosceles 
+     return :equilateral 
+  else 
+     return :isosceles 
 end 
-   
 end 
 
 class TriangleError < StandardError 
