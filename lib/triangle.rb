@@ -28,7 +28,7 @@ def triangle_inequality?
 end 
 
 def valid_triangle?
-  @length_two > 1 && @length_one > 1 && @length_three > 1 
+  @length_two.positive? && @length_one.positive? && @length_three.positive?
 end 
 
 class TriangleError < StandardError 
