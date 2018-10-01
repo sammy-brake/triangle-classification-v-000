@@ -10,17 +10,25 @@ class Triangle
 end
 
 def kind 
-  if @length_three != @length_two && @length_three != @length_one &&   @length_one != @length_two 
-     return :scalene 
-  elsif @length_two == @length_one && @length_two == @length_three 
-     return :equilateral 
-  else 
-     return :isosceles 
-  end 
+  if triangle_inequality? && valid_triangle?
+    if @length_three != @length_two && @length_three != @length_one &&   @length_one != @length_two 
+       return :scalene 
+    elsif @length_two == @length_one && @length_two == @length_three 
+       return :equilateral 
+    else 
+       return :isosceles 
+    end 
+   else 
+     raise TriangleError 
+   end 
 end 
 
 def triangle_inequality? 
   @length_three + @length_two > @length_one && @length_one + @length_two > @length_three && @length_three + @length_one > @length_two 
+end 
+
+def valid_triangle?
+  @length_two > 1 && @length_one > 1 && @length_three > 1 
 end 
 
 class TriangleError < StandardError 
